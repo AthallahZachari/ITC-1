@@ -10,7 +10,7 @@ body{
 }
 
 header{
-    background-color: rgb(39, 39, 39);
+    background-color: rgba(39, 39, 39, .5);
     position: fixed;
     display: flex;
     align-items: center;
@@ -80,7 +80,7 @@ header .navbar ul li a:hover{
         overflow: hidden;
     }
     header .navbar.active{
-        height: 450px;
+        height: 100vh;
         background-color: rgba(255, 225, 255, .5);
         backdrop-filter: blur(3px);
     }
@@ -88,14 +88,20 @@ header .navbar ul li a:hover{
     header .navbar ul{
         width: 50%;
         margin: auto;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         text-align: center;
+        justify-content: flex-start;
+        align-items: center;
         transition: all .5 ease;
         opacity: 0;
     }
     header .navbar.active ul{
         opacity: 1;
+    }
+    header .navbar.active ul li{
+        margin: auto;
     }
     header .navbar ul li a{
         margin: 10px 0px;
@@ -114,7 +120,7 @@ header .navbar ul li a:hover{
     padding: 100px 25px 25px 30px;
 }
 .container .pict-box{
-    background-color: aquamarine;
+    background: linear-gradient(45deg, blueviolet, lightgreen);
     margin: auto;
     height: 200px;
     width: 200px;
@@ -141,11 +147,10 @@ header .navbar ul li a:hover{
 }
 .wrapper{
     background-color: rgb(39, 39, 39);
-    padding: 40px 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
+    padding: 40px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 15px;
 }
 .icon{
     padding: 35px 60px;
@@ -154,4 +159,21 @@ header .navbar ul li a:hover{
     border-radius: 3px;
     background-color: rgb(33, 33, 33);
     color: whitesmoke;
+    text-align: center;
+}
+.icon h2{
+    font-size: x-large;
+    color: whitesmoke;
+}
+.icon p{
+    font-size: x-small;
+    letter-spacing: 1px;
+    color: rgb(94, 94, 94);
+    margin: 10px 0px;
+    z-index: 0;
+}
+@media (max-width:1300px){
+    .wrapper{
+        padding: 20px ;
+    }
 }
